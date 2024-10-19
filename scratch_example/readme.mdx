@@ -1,0 +1,80 @@
+step 1) Basic initinalising.
+
+`npm init -y` create a package.json
+
+`npm i webpack webpack-cli --save-dev`
+
+step 2)create a file: `webpack.config.js`
+
+with basic:
+
+```
+module.exports = {}
+```
+
+step 3) add entry : ` entry: "./app/index.js",`
+
+step 4) install svg-inline-loader.
+
+`npm install svg-inline-loader --save-dev`
+visit npmjs.com for doc and config
+add confugiration as loader.
+
+```
+module: {
+        rules: [
+            {
+                test: /\.svg$/,
+                loader: 'svg-inline-loader'
+            }
+        ],
+    },
+```
+
+check for understanding.js for context of loader.
+
+install css-loader.
+
+`npm install --save-dev css-loader style-loader`
+
+```
+{
+    test: /\.css$/i,
+    use: ["style-loader", "css-loader"],
+}
+```
+
+install bable-loader.
+
+add config:
+
+```
+{
+    test: /\.(js)$/, // this is regex, and () means group of js file, without it, its just fine a js file
+    use: 'bable-loader',
+}
+```
+
+step 4) add output dir
+
+```
+output: {
+    path: "",
+    filename: "",
+}
+```
+
+import path,
+
+`const path = require("path")`
+
+no need to istall it, it comes with node.
+
+so as per the more common practice:
+
+```
+output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js",
+  }
+```
