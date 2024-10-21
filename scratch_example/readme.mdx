@@ -1,24 +1,32 @@
-step 1) Basic initinalising.
+# Lets start with steps to make a project from scratch!
+**Step 1) Basic initinalising.**
 
-`npm init -y` create a package.json
+- `npm init -y` create a package.json
 
-`npm i webpack webpack-cli --save-dev`
+- `npm i webpack webpack-cli --save-dev`
 
-step 2)create a file: `webpack.config.js`
+**Step 2) Create a file: `webpack.config.js`**
 
-with basic:
+- with basic code :
 
 ```
 module.exports = {}
 ```
 
-step 3) add entry : ` entry: "./app/index.js",`
+**Step 3) Add entry in config :**
 
-step 4) install svg-inline-loader.
+- ` entry: "./app/index.js",`
+
+**Step 4) Installation of basic loaders : SVG, CSS, Modern JS**
+> **Note:** Check for `<readme.mdx> outside the folder` for context of loader..
+
+- Install:  `svg-inline-loader`
 
 `npm install svg-inline-loader --save-dev`
-visit npmjs.com for doc and config
-add confugiration as loader.
+
+> **Note:** visit npmjs.com for doc and config.
+
+- Add confugiration as loader.
 
 ```
 module: {
@@ -31,11 +39,15 @@ module: {
     },
 ```
 
-check for understanding.js for context of loader.
 
-install css-loader.
+
+
+- Install:  `css-loader`
+> **Note:** visit npmjs.com for doc and config.
 
 `npm install --save-dev css-loader style-loader`
+
+- Add confugiration as loader.
 
 ```
 {
@@ -44,9 +56,9 @@ install css-loader.
 }
 ```
 
-install bable-loader.
+- Install: `bable-loader`
 
-add config:
+- Add confugiration as loader.
 
 ```
 {
@@ -55,8 +67,9 @@ add config:
 }
 ```
 
-step 4) add output dir
+**Step 4) Add output dir**
 
+- Basic code
 ```
 output: {
     path: "",
@@ -64,11 +77,9 @@ output: {
 }
 ```
 
-import path,
+- Import path: `const path = require("path")`
 
-`const path = require("path")`
-
-no need to istall it, it comes with node.
+> Note: no need to install it, it comes with node.
 
 so as per the more common practice:
 
@@ -79,18 +90,18 @@ output: {
   }
 ```
 
-step 5)Definition time, move to `<readme.mdx> outside the folder`
+**Step 5) Definition time, move to `<readme.mdx> outside the folder`**
 
-Now Its time to use HTML injection plugin,
+- Now Its time to use HTML injection plugin,
 Steps and understang will be here : `<readme.mdx> outside the folder`
 
-step 6) webpack dev server.
+**Step 6) webpack dev server**
 
-Definition time, move to `<readme.mdx> outside the folder`
+> Definition time, move to `<readme.mdx> outside the folder`
 
-install: `npm install webpack-dev-server --save-dev`
+- Install: `npm install webpack-dev-server --save-dev`
 
-step 7) As we know we wrote Entry in webpack.config.
+**Step 7) As we know we wrote Entry in webpack.config.**
 
 so create a file: `app/index.js` now, and write a simple code:
 
@@ -100,20 +111,20 @@ const myArray = ["Jaipur", "Delhi", "Paris"];
 console.log(myArray)
 ```
 
-Tea break 1) what happens till now, lets have a recap:
+***Tea break 1) what happens till now, lets have a recap:***
 
-so when i run `npm build`
+> - so when i run `npm build`
+> - this will run the webpack,
+> - It will go in webpack configuration.
+> - It will check for the enrty point.
+> - So what every code we are writing, some how goes into index.js
+> - If we use any svg or css or moder js file it will handle that, in modules loaders.
+>-  And will throw all the final bundle file into output `buldle.js`
+>-  As we are using a html injection plugin it will inject it into html file
 
-this will run the webpack,
-It will go in webpack configuration.
-It will check for the enrty point.
-So what every code we are writing, some how goes into index.js
-If we use any svg or css or moder js file it will handle that, in modules loaders.
-And will throw all the final bundle file into output `buldle.js`
-As we are using a html injection plugin it will inject it into html file
+**Step 8) Running run build.**
 
-step 8) npm run build.
-
-now it will create a folder automaticly, dist, and add compiled files in it.
+`npm run build` now it will create a folder automaticly, dist, and add compiled files in it.
 
 or use `npm run start` to keep it running always.
+
