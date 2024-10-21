@@ -79,7 +79,41 @@ output: {
   }
 ```
 
-step 5)definition time, move to `understanding.md`
+step 5)Definition time, move to `understanding.md`
 
 Now Its time to use HTML injection plugin,
 Steps and understang will be here : `understanding.md`
+
+step 6) webpack dev server.
+
+Definition time, move to `understanding.md`
+
+install: `npm install webpack-dev-server --save-dev`
+
+step 7) As we know we wrote Entry in webpack.config.
+
+so create a file: `app/index.js` now, and write a simple code:
+
+```
+const myArray = ["Jaipur", "Delhi", "Paris"];
+
+console.log(myArray)
+```
+
+Tea break 1) what happens till now, lets have a recap:
+
+so when i run `npm build`
+
+this will run the webpack,
+It will go in webpack configuration.
+It will check for the enrty point.
+So what every code we are writing, some how goes into index.js
+If we use any svg or css or moder js file it will handle that, in modules loaders.
+And will throw all the final bundle file into output `buldle.js`
+As we are using a html injection plugin it will inject it into html file
+
+step 8) npm run build.
+
+now it will create a folder automaticly, dist, and add compiled files in it.
+
+or use `npm run start` to keep it running always.

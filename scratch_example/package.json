@@ -4,6 +4,8 @@
   "description": "step 1) Basic initinalising.",
   "main": "index.js",
   "scripts": {
+    "start": "webpack server",
+    "build": "NODE_ENV='production' webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,9 +14,11 @@
   "devDependencies": {
     "babel-loader": "^9.2.1",
     "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.2",
     "style-loader": "^4.0.0",
     "svg-inline-loader": "^0.8.2",
     "webpack": "^5.95.0",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
   }
 }
