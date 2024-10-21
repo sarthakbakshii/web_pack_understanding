@@ -1,22 +1,22 @@
-# web_pack_understanding
+# Web Pack basic understanding
 
-Q1) what is the problem web pack is trying to solve ?
+**Q1)  what is the problem web pack is trying to solve ?**
 
 Earlier when do not have any module bundler, we first import the script or cdn, the we run the function or use the script.
 
-problem 1):
+**Problem 1):**
 if the import order is changed or we try to use the script first then import the script then it will show error.
 
-problem 2):
+**Problem 2):**
 it polutes the global scope/object. ex, we can access it like window._ ( _ == lodash for example).
 if we remove this from global scope in browser then, we will not be able to use the script.
 
-Problem it solve:
+**Problem it solve:**
 
 1. ordering of scripts and tags.
-2. prevents the polutions of global scope.
+2. prevents the pollution of global scope.
 
-Q2) Defination in easy word:
+**Q2) Definition in easy word:**
 
 Webpack allows you to modularasi your code as much as you want and
 as you like it to be and finally webpack allow you to push all of the cpde in one single file.
@@ -30,30 +30,30 @@ webpack take care of everything,
 
 it give us a config file, on which we do the things.
 
-Q3) loader and plugins ?
+**Q3) loader and plugins ?**
 
-loader:
+**loader:**
 job of loader is to working into the things while it is going to be loaded.
 before that 1 final output.js file is been created what ever the configuration
 you need to do before that like loading css and svg that is been done into the loaders
 
-plugins:
+**Plugins:**
 And what ever the more ocnfiguration you need to do after the final output js is created that is done in plugin.
 
-Theory 1) HTML injection.
+**Theory 1) HTML injection**
 Now supose we have 5 js file that we have bundle it into 1 js file. ( bundle.js )
 now we have to inject that js into index.html as well.
 We can do it manually also, but best way is to use plugin.
 
-recap: loader are something that do everything before the final compilation have been done.
+> Recap: loader are something that do everything before the final compilation have been done.
 Pluggin are something that does thing afterwards for you.
 
-I have checked Chat GPT, best plugin :
+- I have checked Chat GPT, best plugin :
 
 `https://webpack.js.org/concepts/plugins/#configuration`
 `https://webpack.js.org/plugins/html-webpack-plugin/`
 
-refer this doc, to add the config.
+>Refer this doc, to add the config ^.
 
 install : `npm install --save-dev html-webpack-plugin`
 
@@ -61,27 +61,27 @@ add in webpack.config: `const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 what this will do, it will that the bundle file, inside `output > filename` and inject that onto inded\x.html
 
-Theory 2) Webpack Dev Server
+**Theory 2) Webpack Dev Server**
 
 Webpack Dev Server is a tool that comes with Webpack to enable live development and testing. It creates a local server that hosts your project during development and automatically refreshes the browser whenever changes are made. Here's a breakdown of its key features and how it helps during development:
 
-Key Features of Webpack Dev Server:
+*Key Features of Webpack Dev Server:*
 
 1. Live Reloading/Hot Module Replacement (HMR):
 
-a) When you make changes to your code, Webpack Dev Server automatically rebuilds your project and refreshes the browser, saving you from manual refreshes.
-b) Hot Module Replacement (HMR) allows parts of the application to be updated without a full page reload.
+- When you make changes to your code, Webpack Dev Server automatically rebuilds your project and refreshes the browser, saving you from manual refreshes.
+- Hot Module Replacement (HMR) allows parts of the application to be updated without a full page reload.
 
 2. In-Memory Compilation:
 
-a) Webpack Dev Server serves the bundled files from memory rather than from the file system. This makes the build and serve process faster since it doesn't need to write files to disk.
+- Webpack Dev Server serves the bundled files from memory rather than from the file system. This makes the build and serve process faster since it doesn't need to write files to disk.
 
 3. Development Proxy:
 
-a) It allows you to proxy requests from your development environment to an API server, making it easier to handle backend and frontend development in parallel.
+- It allows you to proxy requests from your development environment to an API server, making it easier to handle backend and frontend development in parallel.
 
 4. Customizable Configuration:
 
-a) You can customize its configuration to serve your files, set up HMR, use specific ports, or handle more complex setups like proxying API requests.
+- You can customize its configuration to serve your files, set up HMR, use specific ports, or handle more complex setups like proxying API requests.
 
 Visit documentation: `https://webpack.js.org/configuration/dev-server/`
